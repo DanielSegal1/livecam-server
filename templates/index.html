@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" height="100%">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body, .container {
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+    <body height="100%">
+        <div class="container" height="100%">
+            <img src="{{ url_for('stream') }}" height="100%">
+        </div>
+    </body>
+</html>

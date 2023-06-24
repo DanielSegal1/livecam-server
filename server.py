@@ -20,7 +20,7 @@ def gen_frames():
 
 
 @app.route('/stream')
-def video_feed():
+def stream():
     # video streaming route. Put this in the src attribute of an img tag
     return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 

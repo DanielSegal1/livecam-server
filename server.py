@@ -1,11 +1,13 @@
+import sys
 from flask import Flask, render_template, Response
 import cv2
 
 app = Flask(__name__)
 
-camera = cv2.VideoCapture(0)
 
 def gen_frames():
+    global camera
+    
     while True:
         success, frame = camera.read()
 
@@ -32,4 +34,8 @@ def index():
 
 
 if __name__ == '__main__':
+    global camera
+
+    auto_detected_camera_param = 0 if sys.platform == 'win32' else '/dev/video0' 
+    camera = cv2.VideoCapture(sys.argv[1] if len(sys.argv) >= 2 else auto_detected_camera_param)
     app.run(debug=True)
